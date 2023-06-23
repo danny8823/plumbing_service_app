@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0 auto;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -13,11 +16,15 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.star-icon {
+  margin: 0px 10px 0px 10px;
+  animation-duration: 3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
