@@ -32,3 +32,15 @@ body {
     transform: rotate(360deg);
   }
 }
+.card-container {
+  width: 100vw;
+  margin: 0 auto;
+}
+.category-card {
+  margin: 15px auto;
+  
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
+}

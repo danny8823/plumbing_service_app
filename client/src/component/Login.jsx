@@ -4,10 +4,11 @@ import Button from 'react-bootstrap/Button'
 import { useState, useEffect } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { authenticate } from "../slice/authSlice";
+import { useNavigate } from "react-router";
 
 export const Login = () => {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,6 +16,7 @@ export const Login = () => {
         e.preventDefault()
         try {
             dispatch(authenticate({email,password}))
+            navigate('/services')
             setEmail('')
             setPassword('')
         } catch (error) {

@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import db from './db.js'
 import User from './models/UserModel.js'
 import authRoutes from './routes/auth-routes.js'
+import { seedData } from './seed.js'
 
 dotenv.config()
 const port = process.env.PORT
@@ -24,6 +25,7 @@ const runServer = async () => {
             isAdmin: true
         })
         console.log('DB connected and synced')
+        await seedData()
         app.listen(port, () => {
             console.log('Server up on port:', port)
         })

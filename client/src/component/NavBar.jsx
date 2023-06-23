@@ -28,15 +28,15 @@ export const NavBar = () => {
         <div>
             {isLoggedIn ? (
                 <div>
-                    <Link to = '/'>Home</Link>
-                    <Link to = '/services'>Services</Link>
-                    <Link onClick={() => signOff()}>Sign off</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' to = '/'>Home</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' to = '/services'>Services</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' onClick={() => signOff()}>Sign off</Link>
                     <small>Logged in as: {user.email}</small>
                 </div>
             ): (
                 <div>
-                    <Link to = '/'>Home</Link>
-                    <Link onClick={handleShow2}>Register</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' to = '/'>Home</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' onClick={handleShow2}>Register</Link>
                     <Modal show={show2} onHide={handleClose2}>
                         <Modal.Header closeButton>
                             <Modal.Title>Register</Modal.Title>
@@ -48,7 +48,7 @@ export const NavBar = () => {
                             </Button>
                         </Modal.Footer>
                     </Modal>
-                    <Link onClick={handleShow}>Sign in</Link>
+                    <Link className = 'mx-2 no-underline hover:underline text-black' onClick={handleShow}>Sign in</Link>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>Log in</Modal.Title>

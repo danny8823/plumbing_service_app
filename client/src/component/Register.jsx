@@ -21,7 +21,7 @@ export const RegisterForm = () => {
             setPassword('')
             setConfirmPassword('')
             dispatch(newUser({email,name,password}))
-            navigate('/')         
+            navigate('/services')         
         } else {
             console.log('passwords do not match')
         }

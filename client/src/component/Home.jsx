@@ -1,7 +1,8 @@
 import React from "react";
 import {BsStar} from 'react-icons/bs'
 import { CarouselComponent } from "./CarouselComp";
-
+import { Button } from "react-bootstrap";
+import { RegisterForm } from "./Register";
 const Home = () => {
     return (
         <div className = "m-auto">
@@ -20,6 +21,11 @@ const Home = () => {
             <p className = "text-center mt-4">Real reviews from our customers!</p>
             <CarouselComponent/>
             <p className = "text-2xl text-center mt-10">Order our services right here on the page. Select a service and our licensed technician will arrive within a hour of your selected time!</p>
+            <p className="text-center">Sign in to get started or register if your a new user!</p>
+            <div className = 'w-96 m-auto p-2 border-2 mb-3'>
+                <RegisterForm/>
+            </div>
+            
         </div>
     )
 }
