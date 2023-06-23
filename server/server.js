@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import db from './db.js'
 import User from './models/UserModel.js'
 import authRoutes from './routes/auth-routes.js'
+import servicesRoutes from './routes/services-routes.js'
 import { seedData } from './seed.js'
 
 dotenv.config()
@@ -12,6 +13,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.use('/auth', authRoutes)
+app.use('/api/services', servicesRoutes)
 app.get('/', (req,res) => res.send('Server is ready'));
 
 const runServer = async () => {
