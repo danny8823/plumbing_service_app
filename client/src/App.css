@@ -17,11 +17,11 @@ body {
 }
 
 .star-icon {
-  margin: 0px 10px 0px 10px;
-  animation-duration: 3s;
-  animation-name: spin;
+  margin: 30px 10px 30px 10px;
+  animation-duration: 4s;
+  animation-name: spin, color-change;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate-reverse;
 }
 
 @keyframes spin {
