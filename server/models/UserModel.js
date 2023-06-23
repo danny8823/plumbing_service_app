@@ -2,18 +2,15 @@ import { Sequelize } from "sequelize";
 import db from "../db.js";
 import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const SALT_ROUNDS = 5;
 
 const User = db.define('user', {
-  username: {
+  name: {
     type: Sequelize.STRING,
-    unique: true,
     allowNull: false
-  },
-  name:{
-    type:Sequelize.STRING,
-    allowNull:false
   },
   password: {
     type: Sequelize.STRING,
@@ -24,7 +21,7 @@ const User = db.define('user', {
   },
   email: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: false
   }
 })
 
@@ -43,8 +40,8 @@ User.prototype.generateToken = function() {
 /**
  * classMethods
  */
-User.authenticate = async function({ username, password }){
-    const user = await this.findOne({where: { username }})
+User.authenticate = async function({ email, password }){
+    const user = await this.findOne({where: { email }})
     if (!user || !(await user.correctPassword(password))) {
       const error = Error('Incorrect username/password');
       error.status = 401;

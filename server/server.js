@@ -18,7 +18,6 @@ const runServer = async () => {
         await db.authenticate();
         await db.sync({force:true})
         await User.create({
-            username: 'admin',
             name: 'admin',
             password: 'admin',
             email: 'admin@email.com',
