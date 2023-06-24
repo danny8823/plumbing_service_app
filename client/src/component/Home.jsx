@@ -3,6 +3,7 @@ import {BsStar} from 'react-icons/bs'
 import { CarouselComponent } from "./CarouselComp";
 import { Button } from "react-bootstrap";
 import { RegisterForm } from "./Register";
+import { AllServices } from "./Services_components/AllServices";
 const Home = () => {
     return (
         <div className = "m-auto">
@@ -25,7 +26,7 @@ const Home = () => {
             <div className = 'w-96 m-auto p-2 border-2 mb-3'>
                 <RegisterForm/>
             </div>
-            
+            <AllServices/>
         </div>
     )
 }
