@@ -1,33 +1,46 @@
 import React from "react";
-import { useEffect, useState} from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchServices } from "../../slice/servicesSlice";
+import { Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router";
 
 export const AllServices = (prop) => {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const services = useSelector((state) => state.services.services)
-
-    const {category} = prop
-
-    console.log(category)
+    const {category} = prop 
+    
+    const orderClicker = () => {
+        navigate('/address')
+    }
+    
     useEffect(() => {
         dispatch(fetchServices())
     },[dispatch])
 
     return (
-        <div className = 'flex flex-wrap justify-center w-60 m-auto'>
+        <div className = 'flex flex-row flex-wrap justify-center w-screen m-auto'>
            {services && services.length ? (
             services
                 .filter((service) => {
                     return service ? service.category === category : service
                 })
                 .map((service) => (
-                    <div key = {service.id}>
-                        <h2>{service.name}</h2>
-                        <p>{service.description}</p>
-                        <img src = {service.image} alt='service'></img>
-                        <small>{service.price}</small>
-                    </div>
+                        <Card key={service.id} className = 'p-1.5 mt-2 mb-2 ml-1 mr-1 shadow-lg shadow-teal-950' 
+                             style={{ width: '20rem' }}>
+                            <Card.Img className = "w-3/4 m-auto h-42" variant="top" src={service.image} />
+                            <Card.Body>
+                                <Card.Title>{service.name}</Card.Title>
+                                <Card.Text>
+                                    {service.description}
+                                </Card.Text>
+                                <Card.Text>
+                                    {service.price}
+                                </Card.Text>
+                            </Card.Body>
+                            <Button variant="primary" onClick={orderClicker}>Order</Button>
+                        </Card>
                 ))
            ) : (
             <h1>No Data!</h1>
