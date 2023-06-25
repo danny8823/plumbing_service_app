@@ -21,7 +21,7 @@ export const Address = () => {
     /** @type React.MutableRefObject<HTMLInputElement> */
     const destinationRef = useRef()
 
-    const center = {lat:44, lng:-80}
+    const center = {lat:33.82445, lng:-118.04580}
 
     if(!isLoaded) return <div>Loading ...</div>
    
@@ -44,7 +44,6 @@ export const Address = () => {
         setDirectionsResponse(null)
         setDistance('')
         setDuration('')
-        originRef.current.value = ''
         destinationRef.current.value = ''
     }
 
@@ -69,7 +68,8 @@ export const Address = () => {
                 </Form.Group>
                 <p>Distance: {distance}</p>
                 <p>Duration: {duration}</p>
-                <Button variant="primary" onClick={calculateRoute}>Calculate</Button>
+                <Button variant="primary" onClick={calculateRoute}>Calculate</Button> 
+                <Button variant="primary" onClick={clearRoute}>Clear</Button>
             </Form>
             <CiLocationArrow1 onClick={() => map.panTo(center)}/>
         </div>
