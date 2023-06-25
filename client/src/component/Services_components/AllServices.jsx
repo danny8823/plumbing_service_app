@@ -15,6 +15,11 @@ export const AllServices = (prop) => {
         navigate('/address')
     }
     
+    let USDollar = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
     useEffect(() => {
         dispatch(fetchServices())
     },[dispatch])
@@ -36,7 +41,7 @@ export const AllServices = (prop) => {
                                     {service.description}
                                 </Card.Text>
                                 <Card.Text>
-                                    {service.price}
+                                    {USDollar.format(service.price)}
                                 </Card.Text>
                             </Card.Body>
                             <Button variant="primary" onClick={orderClicker}>Order</Button>

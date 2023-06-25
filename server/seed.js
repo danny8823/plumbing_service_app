@@ -81,7 +81,7 @@ export const seedData = () => {
     Services.create({
         name: 'Water leak detection',
         description: 'Detect and diagnose water leak',
-        image: 'https://m.media-amazon.com/images/I/51KkVlFseEL._AC_SX679_.jpg',
+        image: 'https://images.unsplash.com/photo-1596394723269-b2cbca4e6313?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
         price: '4999',
         category: 'water'
     })
@@ -123,5 +123,18 @@ export const seedData = () => {
         price: '699',
         category: 'sewer'
     })
-
+    Services.create({
+        name: 'Toilet-install',
+        description: 'Toto toilet',
+        image: 'https://m.media-amazon.com/images/I/61bfhN3oraS._AC_SX679_.jpg',
+        price: '599',
+        category: 'misc'
+    })
+    Services.create({
+        name: 'Garbage disposal',
+        description: 'InSinkErator Garbage Disposal',
+        image: 'https://m.media-amazon.com/images/I/516XZ51phiL.__AC_SX300_SY300_QL70_FMwebp_.jpg',
+        price: '599',
+        category: 'misc'
+    })
 }
