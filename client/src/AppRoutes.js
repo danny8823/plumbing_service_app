@@ -5,6 +5,7 @@ import { Services } from "./component/Services";
 import { Login } from "./component/Login";
 import { RegisterForm } from "./component/Register";
 import { Address } from "./component/Services_components/Address";
+import { Contact } from "./component/Contact";
 
 export const AppRoutes = () => {
     return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
                 <Route path = '/register' element = {<RegisterForm/>}/>
                 <Route path = '/services' element = {<Services/>}/>
                 <Route path = '/address' element = {<Address/>}/>
+                <Route path = '/contact' element = {<Contact/>}/>
             </Routes>
         </div>
     )
